@@ -1,0 +1,58 @@
+# 公开库只纳入程序、测试、运行入口和依赖清单。
+/*
+!/.gitignore
+!/bili-study
+!/requirements.txt
+!/src/
+!/tests/
+
+# 源码目录中也只纳入源文件，防止误传本机数据或附件。
+/src/**
+!/src/**/
+!/src/**/*.py
+!/src/**/*.swift
+/tests/**
+!/tests/**/
+!/tests/**/*.py
+
+# 项目手册、聊天指引、笔记及其他文档保留在本机。
+/docs/
+*.md
+*.docx
+*.pdf
+
+# 本机环境、模型和私有配置
+/.venv/
+/.models/
+.env
+.env.*
+cookies*.txt
+*.pem
+*.key
+*.p12
+*.pfx
+*.mobileprovision
+credentials.*
+secrets.*
+
+# Python 编译、测试及构建产物
+__pycache__/
+*.py[cod]
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+/build/
+/dist/
+*.egg-info/
+
+# 每个视频的运行材料、生成文档和历史交付包
+/runs/
+/生成文档/
+
+# 系统与编辑器产生的临时文件
+.DS_Store
+*.swp
+~$*

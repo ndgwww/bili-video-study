@@ -1,0 +1,10 @@
+#!/bin/sh
+set -eu
+base=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+if [ ! -x "$base/.venv/bin/python" ]; then
+  echo "缺少项目环境，请先按 README 安装依赖。" >&2
+  exit 2
+fi
+export PYTHONPATH="$base/src${PYTHONPATH:+:$PYTHONPATH}"
+export PATH="$base/.venv/bin:$PATH"
+exec "$base/.venv/bin/python" -m bili_study.cli "$@"
